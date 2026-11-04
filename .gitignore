@@ -1,0 +1,36 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTest & Test Reports
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+reports/
+screenshots/
+
+# Environment & Secrets
+.env
+*.pem
+
+# IDEs & Code Editors
+.vscode/
+.idea/
+*.swp
+
+# OS System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Driver Executables (if downloaded locally)
+*.exe
+!venv/
