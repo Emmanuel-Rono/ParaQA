@@ -28,7 +28,7 @@ class LoginPage():
     def check_login_success(self):
         message_locator = Text("Your stores")
         wait_until(message_locator.exists, timeout_secs=10)
-        actual_message = message_locator.webelement.text
+        actual_message = message_locator.web_element.text
         return actual_message
         
         
