@@ -24,12 +24,9 @@ class RegisterPage():
         write(last_name, into = "Last name")
         write(email, into = "Email")
         write(password, into = "password")
+        
         click("Continue with email")
     
-        
-        
- 
-        
     def get_confirmation_message(self):
         message_locator = Text("Check your email")
         wait_until(message_locator.exists, timeout_secs=10)
