@@ -10,20 +10,23 @@ class RegisterPage():
         start_chrome(self.url)
         
     def open_Signup_page(self):
-           click("Use email")
+           click("Use email") 
 
         
     def register_random_user(self):
         #Signup Logic
         first_name = fake.first_name()
         last_name =fake.last_name()
-        email = fake.email()
+        #With @gmail.com
+        email =fake.email(domain="gmail.com")
         password = fake.password(length=12, special_chars=True, digits=True, upper_case=True, lower_case=True)
         write(first_name, into ="First name")
         write(last_name, into = "Last name")
         write(email, into = "Email")
         write(password, into = "password")
         click("Continue with email")
+    
+        
         
  
         
