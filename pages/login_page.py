@@ -1,22 +1,25 @@
-from helium import go_to, write, click, Text, S, find_all, wait_until, kill_browser
-
+from helium import go_to, start_chrome, write, click, Text, S, find_all, wait_until, kill_browser
+from faker import Faker
 
 #login_page code
 
-class LoginPage:
-    def __init__(self, url):
+fake = Faker()
+
+class Login:
+    def __init__(self,url):
         self.url = url
-        return self
+                
+    def open_login_page(self):
+        start_chrome(self.url)
     
-    def openUrl(self):
-        go_to(self.url)
-        return self
-    def login(self, username, password):
-        write(username, into= "Username")
-        write(password, into ="Password")
-        click("Login")
-        wait_until(Text("Account Overview").exists, timeout_secs=10)
-        return AccountPage()
+    def Login(self):
+        #Login logic
+        username= 
+        password =fake.password(length=12, special_chars=True, digits=True, upper_case=True, lower_case=True)
         
-    
-     
+        #Write the username and password into the respective fields
+        write(username, into="Username:")
+        write(password, into="Password:")
+        click("Log In")
+        wait_until(Text("Welcome").exists, timeout_secs=10)
+        
