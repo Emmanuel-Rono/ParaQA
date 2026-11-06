@@ -33,4 +33,4 @@ Desktop.ini
 
 # Driver Executables (if downloaded locally)
 *.exe
-!venv/
+venv/
