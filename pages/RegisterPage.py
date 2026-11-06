@@ -33,7 +33,7 @@ class RegisterPage():
     def get_confirmation_message(self):
         message_locator = Text("Check your email")
         wait_until(message_locator.exists, timeout_secs=10)
-        actual_message = message_locator.text
+        actual_message = message_locator.web_element.text
         return actual_message
         
         
