@@ -7,10 +7,9 @@ from faker import Faker
 
 fake = Faker()
 
-
 class LoginPage():
     def __init__(self):
-        self.url = "https://spree.sh/dashboard/login"
+        self.url = "https://demo.spreecommerce.org/us/en/account"
                 
     def open_login_page(self):
         start_chrome(self.url)
@@ -26,9 +25,15 @@ class LoginPage():
         click("Sign in")
         
     def check_login_success(self):
-        message_locator = Text("Your stores")
+        message_locator = Text("Account Overview")
         wait_until(message_locator.exists, timeout_secs=10)
         actual_message = message_locator.web_element.text
         return actual_message
         
+    def signout(self):
+        click("Sign Out")
+        message_locator = Text("Sign in to access your account and order history.")
+        wait_until(message_locator.exists, timeout_secs=10)
+        actual_messgae =message_locator.web_element.text
+        return actual_messgae
         
