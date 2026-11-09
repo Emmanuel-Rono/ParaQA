@@ -8,5 +8,6 @@ def test_login_with_valid_credentials():
     #Assert first
     assert "Account Overview" in Login_page.check_login_success()
     Login_page.signout()
-    assert "Sign in to access your account and order history." in Login_page.signout()
+    Login_page.check_signout_success()
+    assert "Sign in to access your account and order history." in Login_page.check_signout_success()
     

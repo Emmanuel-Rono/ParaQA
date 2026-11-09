@@ -32,8 +32,10 @@ class LoginPage():
         
     def signout(self):
         click("Sign Out")
+        
+    def check_signout_success(self):
         message_locator = Text("Sign in to access your account and order history.")
         wait_until(message_locator.exists, timeout_secs=10)
-        actual_messgae =message_locator.web_element.text
-        return actual_messgae
+        actual_message = message_locator.web_element.text
+        return actual_message
         
