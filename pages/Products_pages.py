@@ -3,13 +3,16 @@ import os
 from helium import go_to, start_chrome, write, click, Text, S, find_all, wait_until, kill_browser,text
 from faker import Faker
 
-
+  
 class Product_Page:
     def __init__(self):
         self.url = "https://demo.spreecommerce.org/us/en/products"
-    
-    
         
+    
+
+    
+    
+
     #1.Open Products page
     def open_products_page(self):
         start_chrome(self.url)
@@ -20,10 +23,25 @@ class Product_Page:
         actual_text =  message_locator. web_element.text
         return actual_text
     #2.Verify that sort is available
+
+    
     #2.Click a product
+    
+    # Get all product links
+    PRODUCT_LINK_SELECTOR = ".group a[href*='/products/']"
+    
+    def get_all_product_elements(self):
+        links = find_all(S(self.PRODUCT_LINK_SELECTOR))
+        if not links:
+            raise RuntimeError(f"No products found")
+        return links
+         
+    def click_a_product():
+        
+
     #Check that product details are displayed
     #3.Add to cart
-    #5.Check if cart appears as slideing window
+    #5.Check if cart appears as slideing windowres
     #6.View Cart
     #7.COnfirm product is available
     #8.Click Proced to checkout
