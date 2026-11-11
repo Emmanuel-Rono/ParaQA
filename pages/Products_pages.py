@@ -7,12 +7,7 @@ from faker import Faker
 class Product_Page:
     def __init__(self):
         self.url = "https://demo.spreecommerce.org/us/en/products"
-        
     
-
-    
-    
-
     #1.Open Products page
     def open_products_page(self):
         start_chrome(self.url)
@@ -23,7 +18,6 @@ class Product_Page:
         actual_text =  message_locator. web_element.text
         return actual_text
     #2.Verify that sort is available
-
     
     #2.Click a product
     
@@ -36,17 +30,26 @@ class Product_Page:
             raise RuntimeError(f"No products found")
         return links
          
-    def click_a_product():
-        
-
+    def click_a_product(self):
+        product_links = self.get_all_product_elements()
+        click(product_links[0])
+        wait_until(Text("ADD TO CART").exists, timeout_secs=10)
+    
     #Check that product details are displayed
     #3.Add to cart
+    
+    def add_product_to_cart():
+        click("add to cart")
+        wait_until(Text("View Cart").exists, timeout_secs=10)
     #5.Check if cart appears as slideing windowres
+    def check_if_slide_window():
+        message_locator = Text("Chekout")
+        wait_until(message_locator.exists, timeout_secs= 10)
+        actual_text = message_locator.web_element.text
+        return actual_text
     #6.View Cart
     #7.COnfirm product is available
     #8.Click Proced to checkout
     #9.Check Checkou page is visible.
     #10.
-        
-    
-    
+  
