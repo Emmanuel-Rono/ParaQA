@@ -48,8 +48,22 @@ class Product_Page:
         actual_text = message_locator.web_element.text
         return actual_text
     #6.View Cart
+    def view_car():
+        message_locator = Text("Cart")
+        wait_until(message_locator.exists, timeout_secs= 10)
+        actual_text = message_locator.web_element.text
+        return actual_text
+        
     #7.COnfirm product is available
+    
+    def confirm_if_product_is_Available():
+        message_locator = Text("Checkout")
+        wait_until(message_locator.exists, timeout_secs= 10)
+        actual_text = message_locator.web_element.text
+        return actual_text
+        
+        
     #8.Click Proced to checkout
     #9.Check Checkou page is visible.
     #10.
-  
+ 
