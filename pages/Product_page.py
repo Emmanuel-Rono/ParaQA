@@ -1,9 +1,7 @@
 
 import os
-from helium import go_to, start_chrome, write, click, Text, S, find_all, wait_until, kill_browser,text
-from faker import Faker
-
-  
+# Before
+from helium import go_to, start_chrome, write, click, Text, S, find_all, wait_until, kill_browser
 class Product_Page:
     def __init__(self):
         self.url = "https://demo.spreecommerce.org/us/en/products"
@@ -11,6 +9,7 @@ class Product_Page:
     #1.Open Products page
     def open_products_page(self):
         start_chrome(self.url)
+        
     # Verify that page is open
     def verify_products_page_opened(self):
         message_locator= Text("Sort")
@@ -48,22 +47,30 @@ class Product_Page:
         actual_text = message_locator.web_element.text
         return actual_text
     #6.View Cart
-    def view_car():
+    def view_cart():
         message_locator = Text("Cart")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
         
     #7.COnfirm product is available
-    
     def confirm_if_product_is_Available():
         message_locator = Text("Checkout")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
-        
-        
+    
     #8.Click Proced to checkout
+    
+    def checkout():
+        click("Checkout")
     #9.Check Checkou page is visible.
+    
+    def Check_if_checkout_if_available():
+        message_locator = Text("Pay Now")
+        wait_until(message_locator.exists, timeout_secs= 10)
+        actual_text = message_locator.web_element.text
+        return actual_text
+        
     #10.
  
