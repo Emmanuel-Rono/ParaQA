@@ -37,40 +37,45 @@ class Product_Page:
     #Check that product details are displayed
     #3.Add to cart
     
-    def add_product_to_cart():
+    def add_product_to_cart(self):
         click("add to cart")
         wait_until(Text("View Cart").exists, timeout_secs=10)
     #5.Check if cart appears as slideing windowres
-    def check_if_slide_window():
+    def check_if_slide_window(self):
         message_locator = Text("Chekout")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
     #6.View Cart
-    def view_cart():
-        message_locator = Text("Cart")
+    
+    def click_Cart(self):
+        click("View Cart")
+        
+        
+    def view_cart(self):
+        message_locator = Text("Shopping Cart")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
         
     #7.COnfirm product is available
     def confirm_if_product_is_Available():
-        message_locator = Text("Checkout")
+        message_locator = Text("Proceed to Checkout")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
     
     #8.Click Proced to checkout
     
-    def checkout():
-        click("Checkout")
+    def checkout(self):
+        click("Proceed to Checkout")
     #9.Check Checkou page is visible.
     
-    def Check_if_checkout_if_available():
+    def Check_if_checkout_if_available(self):
         message_locator = Text("Pay Now")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
         
-    #10.
+
  
