@@ -67,7 +67,7 @@ class Product_Page:
         return actual_text
         
     #7.COnfirm product is available
-    def confirm_if_product_is_Available():
+    def confirm_if_product_is_Available(self):
         message_locator = Text("Proceed to Checkout")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
