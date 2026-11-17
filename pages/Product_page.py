@@ -48,8 +48,9 @@ class Product_Page:
         click("add to cart")
         wait_until(Text("View Cart").exists, timeout_secs=10)
     #5.Check if cart appears as slideing window
+    
     def check_if_product_was_added_to_cart (self):
-        message_locator = Text("Chekout")
+        message_locator = Text("Checkout")
         wait_until(message_locator.exists, timeout_secs= 10)
         actual_text = message_locator.web_element.text
         return actual_text
@@ -57,7 +58,7 @@ class Product_Page:
     
     def go_to_Cart(self):
         click("View Cart")
-        wait_until(Text("Shopping Cart"))
+        wait_until(Text("Shopping Cart").exists, timeout_secs=10)
         
     def confirm_view_cart_opened(self):
         message_locator = Text("Shopping Cart")
@@ -76,6 +77,10 @@ class Product_Page:
     
     def checkout(self):
         click("Proceed to Checkout")
+        wait_until(Text("Pay Now").exists, timeout_secs= 10)
+        
+        
+        
     #9.Check Checkou page is visible.
     
     def Check_if_checkout_if_available(self):
